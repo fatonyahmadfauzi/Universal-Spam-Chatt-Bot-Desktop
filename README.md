@@ -1,66 +1,77 @@
-# 🖥️ Universal Chat Sender Bot
+# 🚀 Universal Chat Sender Bot (Clipboard Edition)
 
-Script Python sederhana untuk mengirim pesan otomatis ke aplikasi apa pun (WhatsApp Desktop, Telegram, Line, dll) menggunakan **PyAutoGUI**.  
-Tidak perlu Selenium, browser, atau nama kontak — cukup posisikan kursor di kolom chat, dan bot akan mengirimkan pesan secara otomatis.
-
----
-
-## 🚀 Fitur
-
-- Mengirim pesan secara otomatis ke aplikasi yang aktif
-- Tanpa tergantung pada nama kontak atau grup
-- Dapat mengirim beberapa pesan berulang dengan interval waktu
-- Opsi bot prompt (menampilkan `<Status: x/y>` pada setiap pesan)
-- Ringan dan mudah digunakan
+**Script Python untuk mengirim pesan otomatis ke aplikasi chat dengan dukungan emoji & format teks!**  
+Menggunakan sistem clipboard untuk memastikan karakter khusus (seperti emoji) tidak rusak.
 
 ---
 
-## 🔧 Cara Pakai
+## 🌟 Fitur Utama
 
-1. Pastikan Python 3 sudah terinstal.
-2. Install PyAutoGUI:
+- ✅ **Emoji & Format Teks**: Kirim emoji (🎉, ✅), teks tebal/miring (`*tebal*`, `_miring_`), dan simbol khusus via clipboard.
+- ✅ **Pengiriman Berulang**: Atur jumlah pengiriman dan jeda waktu.
+- ✅ **Bot Status**: Tambahkan header `<Status: x/y>` untuk pelacakan.
+- ✅ **Multi-Platform**: Bekerja di aplikasi desktop seperti WhatsApp, Telegram, Messenger, dll.
+- ✅ **Anti-Error**: Penanganan khusus karakter EOF (`Ctrl+Z`/`Ctrl+D`).
+
+---
+
+## 🛠️ Instalasi
+
+1. Pastikan Python 3.10+ terinstal.
+2. Install dependensi:
 
 ```bash
-pip install pyautogui
+pip install pyautogui pyperclip
 ```
-
-3. Jalankan script:
-
-```bash
-python chat_sender.py
-```
-
-4. Isi pesan, jumlah, dan jeda.
-5. Fokus ke aplikasi target dalam 5 detik.
-6. Pesan akan diketik dan dikirim otomatis.
 
 ---
 
-## 📝 Contoh Output
+## 🖥️ Cara Pakai
 
-```vbnet
-Enter your message: Halo bro!
-Enter how many times to send the message: 3
-Interval (in seconds) between messages: 1
-Do you want to add bot prompt to your message? (Y/N) Y
+1. Jalankan script:
 
-📌 Please open the target chat window and click on the text input field.
-You have 5 seconds to switch to the chat window...
-
-✅ Semua pesan telah berhasil dikirim.
+```bash
+python chatt.py
 ```
+
+2. Ikuti instruksi:
+
+```bash
+Berapa kali dikirim? 5
+Interval antar pesan (detik): 2
+Tambahkan status pengiriman? (Y/N): Y
+
+📋 Tempel pesan (tekan Ctrl+V lalu Enter):
+[HALO!] 🚀
+*Promo Spesial* hari ini:
+Beli 1 Gratis 1 ✅
+```
+
+3. Arahkan kursor ke kolom chat dalam 5 detik.
+4. Script akan mengirim pesan secara otomatis.
+
+---
+
+## 🚨 Troubleshooting
+
+- **Emoji tidak muncul?**
+  Pastikan menempel pesan via `Ctrl+V` (bisa dari Notepad/Word).
+- **Pesan terkirim tanpa format?**
+  Gunakan sintaks aplikasi target (contoh: `*tebal*` untuk WhatsApp).
+- **Karakter aneh (^Z)?**
+  Hindari mengetik manual. Selalu salin-tempel pesan!
+
+---
+
+## 📜 Release Notes
+
+Terbaru: **v1.2.0** - [Lihat catatan rilis]()
 
 ---
 
 ## ⚠️ Disclaimer
 
-⚠️ Gunakan script ini secara bijak.
-Script ini hanya untuk eksperimen dan edukasi pribadi.
-Jangan digunakan untuk spam atau melanggar kebijakan aplikasi manapun.
+**Hanya untuk tujuan edukasi!**
+Penggunaan untuk spam dapat melanggar kebijakan aplikasi.
 
 ---
-
-## 👨‍💻 Dibuat oleh
-
-- Revisi & versi PyAutoGUI oleh **Fatony Ahmad Fauzi**
-- Terinspirasi dari WhatsApp Spam Bot berbasis Selenium
