@@ -1,6 +1,6 @@
 # Release Notes
 
-## [v1.2.0] - 2025-05-01
+## [v1.2.0] - 2025-04-17
 
 **Branch:** `clipboard-integration`
 
