@@ -1,64 +1,63 @@
 # Release Notes
 
-## [v1.2.0] - 2025-04-17
+## [v1.3.0] - 2025-04-21
 
-**Branch:** `clipboard-integration`
+**Branch:** `multi-text-support`
 
 ---
 
 ### 🚀 Fitur Baru
 
-1. **Sistem Clipboard**:
+1. **Multi-Teks Input**:
 
-   - Dukungan penuh emoji & karakter Unicode via `pyperclip`.
-   - Fix bug input EOF (`Ctrl+Z`/`Ctrl+D`).
+   - Dukungan input beberapa pesan sekaligus
+   - Penomoran otomatis (Teks 1, Teks 2, dst)
+   - Perintah "selesai" untuk mengakhiri input
 
-2. **Bot Status**:
+2. **Sistem Pengiriman**:
 
-   - Header `<Status: x/y>` untuk melacak progres pengiriman.
+   - Mengirim semua pesan secara berurutan tiap iterasi
+   - Status tracking berlaku untuk seluruh rangkaian pesan
 
-3. **Optimasi Universal**:
-   - Kompatibel dengan semua aplikasi desktop (WhatsApp, Telegram, Line, dll).
+3. **Optimasi**:
+   - Waktu jeda yang lebih konsisten antar pesan
+   - Penanganan error yang lebih baik
 
 ---
 
 ### 🐛 Perbaikan Bug
 
-- Memperbaiki masalah pesan terpotong saat menggunakan jeda <1 detik.
-- Karakter khusus (seperti `▲` atau `✅`) kini terbaca sempurna.
+- Memperbaiki masalah input kosong
+- Meningkatkan respons waktu jeda
+- Perbaikan minor pada tampilan prompt
 
 ---
 
 ### 📥 Cara Upgrade
 
 ```bash
-pip install --upgrade pyperclip
+git pull origin main
 ```
 
 ---
 
 ### 🧑💻 Contoh Penggunaan
 
-**Kirim pesan:**
+**Input:**
 
 ```bash
-Berapa kali dikirim? 3
-Interval antar pesan (detik): 1.5
-Tambahkan status pengiriman? (Y/N): Y
-
-📋 Tempel pesan:
-*REMINDER* 🔔
-Jangan lupa bayar tagihan
-sebelum 30 Mei!
+Teks 1: Promo hari ini 🎉
+Teks 2: *Diskon 50%* untuk 10 pembeli pertama
+Teks 3: Jangan lewatkan! ✅
+Teks 4: selesai
 ```
 
 **Hasil:**
 
 ```
-🚩 Status: 1/3
-*REMINDER* 🔔
-Jangan lupa bayar tagihan
-sebelum 30 Mei!
+<Status: 1/3> Promo hari ini 🎉
+<Status: 1/3> *Diskon 50%* untuk 10 pembeli pertama
+<Status: 1/3> Jangan lewatkan! ✅
+<Status: 2/3> Promo hari ini 🎉
+... (dan seterusnya)
 ```
-
----
