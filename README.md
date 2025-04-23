@@ -27,7 +27,7 @@ pip install pyautogui
 3. Jalankan script:
 
 ```bash
-python chat_sender.py
+python chat.py
 ```
 
 4. Isi pesan, jumlah, dan jeda.
